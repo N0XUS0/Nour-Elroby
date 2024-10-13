@@ -16,124 +16,36 @@
 
 
 
-<div class="slideshow-container">
 
-  <div class="mySlides fade">
-    <div class="numbertext"> </div>
-    <img src="img/1.jpg" >
-  </div>
-  
-  <div class="mySlides fade">
-    <div class="numbertext"> </div>
-    <img src="img/2.jpg" >
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext"> </div>
-    <img src="img/3.jpg" >
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext"> </div>
-    <img src="img/4.jpg" >
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext"> </div>
-    <img src="img/5.jpg" >
-  </div>  <div class="mySlides fade">
-    <div class="numbertext"> </div>
-    <img src="img/6.jpg" >
-  </div>
-  
-  <div class="mySlides fade">
-    <div class="numbertext"> </div>
-    <img src="img/7.jpg" >
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext"> </div>
-    <img src="img/8.jpg" >
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext"> </div>
-    <img src="img/9.jpg" >
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext"> </div>
-    <img src="img/10.jpg" >
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext"> </div>
-    <img src="img/11.jpg" >
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext"> </div>
-    <img src="img/12.jpg" >
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext"> </div>
-    <img src="img/13.jpg" >
-  </div>
-  <div class="mySlides fade">
-    <div class="numbertext"> </div>
-    <img src="img/14.jpg" >
-  </div>
-  </div>
-  <br>
-  
-  <div style="text-align:center">
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-  </div>
-  
-<div class="vid" id="vid">
-        
-  <iframe width="100%" height="315" src="https://www.youtube.com/embed/-2jmxTxCKTU?si=YzdniyCI7Kgb6UiH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
+<iframe id="fbVideo" 
+    src="https://www.facebook.com/plugins/video.php?height=422&href=https%3A%2F%2Fwww.facebook.com%2Fnour.elropy.1%2Fvideos%2F1381322519183822%2F&show_text=false&width=560&t=0" 
+    width="560" height="422" style="border:none;overflow:hidden" 
+    scrolling="no" frameborder="0" allowfullscreen="true" 
+    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+    allowFullScreen="true"></iframe>
 
-<div class="imge" >
-  <style >
-.imge img {
-  width: 100%;
-  
-  height: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-  </style>
-<img src="img/x1.jpg" alt="img">
-<img src="img/x2.jpg" alt="img">
-<img src="img/x3.jpg" alt="img">
-<img src="img/x4.jpg" alt="img">
-</div>
 <script>
-  let slideIndex = 0;
-  showSlides();
-  
-  function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
+// اختيار العنصر iframe
+const videoIframe = document.getElementById('fbVideo');
+
+// إنشاء مراقب
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // عندما يصبح الفيديو مرئيًا في نافذة العرض، نضيف خاصية autoplay إلى الـ src لتشغيل الفيديو
+      const src = videoIframe.src;
+      if (!src.includes("autoplay=1")) {
+        videoIframe.src += "&autoplay=1";
+      }
+      // إيقاف المراقبة بعد تشغيل الفيديو
+      observer.unobserve(videoIframe);
     }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex-1].style.display = "block";  
-    dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 3000); // Change image every 2 seconds
-  }
-  </script>
+  });
+}, { threshold: 0.5 }); // يبدأ المراقب عندما يكون نصف العنصر على الأقل مرئيًا
+
+// تشغيل المراقب على iframe الفيديو
+observer.observe(videoIframe);
+</script>
+
 </body>
 </html>

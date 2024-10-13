@@ -6,7 +6,9 @@ body{
   font-family: "Inconsolata", monospace;  
   font-weight: bold;
 }
-
+ .imges{
+  margin-bottom: -40px
+ }
 
 
 @import url("https://fonts.googleapis.com/css?family=Inconsolata");
@@ -174,14 +176,17 @@ body{
     text-align: center;
     margin: 0% !important;
     
-    filter: drop-shadow(10px 7px 5px #002341 );
+    filter: drop-shadow(0px 7px 5px #002341 );
 }
 .img1 img{
-  width: 162px !important;
-height: auto;
-margin-bottom: 4%;
-margin-top: -60px;
+
+    width: 100% !important;
+    height: auto;
+    margin-bottom: -10%;
+    margin-top: -20px;
+    z-index: -100;
 }
+
 .img1 h2{
 color: #fff;
 margin-bottom: 2% !important;
@@ -406,13 +411,13 @@ section {
   height: 50vh !important;
   position: relative;
   transition-property: transform;
-  border: 2px solid #fc2c03;
+  border: 2px solid #0486a6;
 }
 
 .swiper-slide span {
   text-transform: uppercase;
   color: #fff;
-  background: #fc2c03;
+  background: #0486a6;
   padding: 7px 18px 7px 25px;
   display: inline-block;
   border-radius: 0 20px 20px 0px;
@@ -475,7 +480,7 @@ section {
 .scroll {
 	width: 60px;
 	height: 60px;
-	border: 2px solid #fc2c03;
+	border: 2px solid #0486a6;
 	border-radius: 50%;
 	position: relative;
 	animation: down 1.5s infinite;
@@ -487,8 +492,8 @@ section {
 		left: 18px;
 		width: 18px;
 		height: 18px;
-		border-left: 2px solid #fc2c03;
-  	border-bottom: 2px solid #fc2c03;
+		border-left: 2px solid #0486a6;
+  	border-bottom: 2px solid #0486a6;
 		transform: rotate(-45deg);
 	}
 }
@@ -519,7 +524,7 @@ section {
 .scroll2 {
 	width: 60px;
 	height: 60px;
-	border: 2px solid #fc2c03;
+	border: 2px solid #0486a6;
 	border-radius: 50%;
 	position: relative;
 	animation: right 1.5s infinite;
@@ -532,8 +537,8 @@ section {
 		left: 13px;
 		width: 18px;
 		height: 18px;
-		border-left: 2px solid #fc2c03;
-  	border-bottom: 2px solid #fc2c03;
+		border-left: 2px solid #0486a6;
+  	border-bottom: 2px solid #0486a6;
 		transform: rotate(225deg);
 	}
 }
@@ -731,7 +736,7 @@ padding: 5px;
 .topnav {
   overflow: hidden;
   background-color: #000000;
-  border: 1px solid #8f1800;
+  border: 1px solid #0486a6;
   z-index: 100;
   margin-bottom: 40px !important;
   
@@ -753,7 +758,7 @@ padding: 5px;
 }
 
 .topnav a.active {
-  background-color: #fc2d0398;
+  background-color: #00a2ca;
   color: white;
 }
 
@@ -866,10 +871,10 @@ padding: 5px;
 text-transform: uppercase;
 background-image: linear-gradient(
   -225deg,
-  #ffffff 0%,
-  #5f1d03 29%,
-  #cf5300 67%,
-  #ff5e00 100%
+  #3995ff 0%,
+  #0486a6 29%,
+  #00657e 67%,
+  #004e61 100%
 );
 background-size: auto auto;
 background-clip: border-box;
@@ -882,6 +887,7 @@ animation: textclip 2s linear infinite;
 display: inline-block;
     font-size: 90px;
     padding-top: 28%;
+    z-index: 10000;
 }
 
  

@@ -16,16 +16,16 @@
       background: #055596;
     margin-bottom: 10px;
   }
-  .swiper-slide--1 {
+  .swiper-slide--3 {
     background: 
-      url("img/teh/1.png")
-        no-repeat 50% 50% / cover;
+      url("img/manager.jpg") 
+        no-repeat 50% 50% / cover !important;
   }
   
   .swiper-slide--2 {
     background:
-    url("img/teh/2.png")
-        no-repeat 50% 50% / cover;
+    url("img/WhatsApp\ Image\ 2024-10-12\ at\ 03.34.18_1c5017ef.jpg") 
+        no-repeat 50% 50% / cover !important;
   }
   .swiper-slide--3{
     background: 
