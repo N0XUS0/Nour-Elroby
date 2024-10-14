@@ -19,7 +19,7 @@
   .swiper-slide--3 {
     background: 
       url("img/manager.jpg") 
-        no-repeat 50% 50% / cover !important;
+        no-repeat 50% 50% / cover  !important;
   }
   
   .swiper-slide--2 {
