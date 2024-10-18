@@ -7,7 +7,16 @@
     <link rel="stylesheet" href="groub.css">
 </head>
 <body>
-        
+    <script>
+        // التحقق مما إذا كان المستخدم قد سجل الدخول
+        window.onload = function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn !== 'true') {
+                // إذا لم يسجل الدخول، يتم إرجاعه إلى صفحة تسجيل الدخول
+                window.location.href = 'login.html';
+            }
+        }
+    </script>    
     <div class="xx">
         <h2>قم بأختيار الصف الدراسي</h2>
             <div class="xx"> <center>

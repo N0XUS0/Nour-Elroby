@@ -30,6 +30,16 @@
         margin-top: 40px;
     }
   </style>
+  <script>
+    // التحقق مما إذا كان المستخدم قد سجل الدخول
+    window.onload = function() {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (isLoggedIn !== 'true') {
+            // إذا لم يسجل الدخول، يتم إرجاعه إلى صفحة تسجيل الدخول
+            window.location.href = 'login.html';
+        }
+    }
+</script>
         <div class="dropdown">
             <button>سنتر جلاكسي</button>
             <div class="dropdown-options">
