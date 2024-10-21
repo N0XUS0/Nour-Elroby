@@ -31,15 +31,16 @@
     }
   </style>
   <script>
-    // التحقق مما إذا كان المستخدم قد سجل الدخول
     window.onload = function() {
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        // التحقق مما إذا كان المستخدم مسجل الدخول عبر sessionStorage
+        const isLoggedIn = sessionStorage.getItem('isLoggedIn');
         if (isLoggedIn !== 'true') {
-            // إذا لم يسجل الدخول، يتم إرجاعه إلى صفحة تسجيل الدخول
+            // إذا لم يكن المستخدم مسجل الدخول، يتم إرجاعه إلى صفحة تسجيل الدخول
             window.location.href = 'login.html';
         }
     }
 </script>
+
         <div class="dropdown">
             <button>سنتر جلاكسي</button>
             <div class="dropdown-options">

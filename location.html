@@ -8,7 +8,17 @@
     <link rel="stylesheet" href="ax.css">
 </head>
 <body>
-  
+  <script>
+    window.onload = function() {
+        // التحقق مما إذا كان المستخدم مسجل الدخول عبر sessionStorage
+        const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+        if (isLoggedIn !== 'true') {
+            // إذا لم يكن المستخدم مسجل الدخول، يتم إرجاعه إلى صفحة تسجيل الدخول
+            window.location.href = 'login.html';
+        }
+    }
+</script>
+
 
   
       <style>

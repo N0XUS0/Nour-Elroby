@@ -32,19 +32,18 @@
     <button onclick="checkCode()">تأكيد</button>
 
     <script>
+        // دالة التحقق من الكود
         function checkCode() {
-            // الكود الصحيح
-            const correctCode = "NOUR@$STUDENT0001";  // يمكنك تعديل الكود هنا
+            const correctCode = "NOUR@$STUDENT0001";  // الكود الصحيح
 
-            // الكود الذي أدخله المستخدم
-            const userCode = document.getElementById('codeInput').value;
+            const userCode = document.getElementById('codeInput').value;  // الكود الذي أدخله المستخدم
 
             // التحقق من صحة الكود
             if (userCode === correctCode) {
-                // تخزين حالة تسجيل الدخول في sessionStorage (للجلسة الحالية فقط)
+                // تخزين حالة تسجيل الدخول في sessionStorage (فقط للجلسة الحالية)
                 sessionStorage.setItem('isLoggedIn', 'true');
                 
-                // إعادة توجيه المستخدم إلى صفحة الاندكس
+                // إعادة توجيه المستخدم إلى صفحة index.html
                 window.location.href = "index.html";
             } else {
                 alert("الكود غير صحيح، حاول مرة أخرى.");

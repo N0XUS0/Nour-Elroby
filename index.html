@@ -116,15 +116,16 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/3r3IOzNNKRM?si=D1HhX3x9Lz38bGRS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div> -->  
     <script>
-        // التحقق مما إذا كان المستخدم قد سجل الدخول
         window.onload = function() {
-            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            // التحقق مما إذا كان المستخدم مسجل الدخول عبر sessionStorage
+            const isLoggedIn = sessionStorage.getItem('isLoggedIn');
             if (isLoggedIn !== 'true') {
-                // إذا لم يسجل الدخول، يتم إرجاعه إلى صفحة تسجيل الدخول
+                // إذا لم يكن المستخدم مسجل الدخول، يتم إرجاعه إلى صفحة تسجيل الدخول
                 window.location.href = 'login.html';
             }
         }
     </script>
+    
     <div class="topnav" id="myTopnav">
         <a href="#home" class="active">home</a>
         <a href="location.html">السناتر</a>
